@@ -6,6 +6,7 @@ from .serializers import ClientSerializer,\
                          PizzaSerializer, IngredientsSerializer,\
                          OrderSerializer, OrderPostSerializer
 from .models import Client, Ingredients, Order, Pizza
+import json
 
 
 # Create your views here.
@@ -73,3 +74,43 @@ class OrderView(APIView):
                 "errors": serializer.errors,
             }
             return Response(data)
+
+
+class Param:
+
+    def __init__(self, _items, _count):
+        self.items = _items
+        self.count = _count
+    
+    def __repr__(self):
+        return "Ingredient: "+ self.items+ " count: "+str(self.count)
+
+
+class BestIngredientsView(APIView):
+    
+
+    def get(self, request):
+        queryset = Order.objects.all()
+        full_arr = []
+        for item in queryset:
+            result = item.ingredients.replace("{", "").replace("}", "")
+            result = result.split(",")
+            ing_arr = []
+            for ing in result:
+                ing_arr.append(ing.split("@")[0].replace("\"", ""))
+            full_arr.extend(ing_arr)      
+        result_arr = {}
+        for item in full_arr:
+            if item in result_arr:
+                result_arr[item] += 1
+            else:
+                result_arr[item] = 1       
+        
+        param_list = []
+
+        for k, v in result_arr.items():
+            param_list.append(Param(k, v))
+        
+        param_list = sorted(param_list, key=lambda x: x.count, reverse=True)
+        print(param_list)
+        return Response(([x.__dict__ for x in param_list]))

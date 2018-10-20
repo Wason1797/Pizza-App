@@ -5,7 +5,7 @@
  * with your service endpoint below
  * ****************************
  */
-fetch('json/statistics.json')
+fetch('http://localhost:8000/bestclient/get/')
     .then(response => response.json())
     .then(statistics => {
         let template = createStatisticsTemplate(statistics);

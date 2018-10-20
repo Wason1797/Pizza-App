@@ -10,7 +10,7 @@
  * with your service endpoint below
  * ****************************
  */
-fetch("http://localhost:8000/order/getall/"+id)
+fetch("http://localhost:8000/order/get/"+id)
     .then(response => response.json())
     .then(order => {
         let template = createRowTemplate(order);

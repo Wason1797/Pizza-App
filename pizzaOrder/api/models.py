@@ -37,7 +37,7 @@ class Order(models.Model):
         
     class Meta:
         managed = False
-        db_table = 'ORDER'
+        db_table = 'order_p'
 
 
 class Client(models.Model):
@@ -69,3 +69,4 @@ class Pizza(models.Model):
     class Meta:
         managed = False
         db_table = 'pizza'
+

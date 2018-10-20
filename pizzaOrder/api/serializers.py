@@ -31,7 +31,8 @@ class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         depth = 2
-        fields = ('order_id', 'client', 'pizza', 'ingredients', 'order_total', 'ingredients_arr')
+        fields = ('order_id', 'client', 'pizza', 'ingredients', 'order_total',
+                  'ingredients_arr')
 
 
 class OrderPostSerializer(serializers.ModelSerializer):
@@ -39,3 +40,5 @@ class OrderPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = ('client', 'pizza', 'ingredients')
+
+

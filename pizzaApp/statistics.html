@@ -20,7 +20,7 @@
 
     <header class="header-section container-fluid">
         <nav class="navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="./index.html">
                 <img src="images/image4.png" width="50" height="50" class="d-inline-block align-top" alt="">
                 L'ultima Cena
             </a>
@@ -31,13 +31,13 @@
                 <!-- LINKS -->
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/">Build Your Pizza!</a>
+                    <a class="nav-link" href="./index.html">Build Your Pizza!</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/orders.html">Orders</a>
+                    <a class="nav-link" href="./orders.html">Orders</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/statistics.html">Statistics</a>
+                    <a class="nav-link" href="./statistics.html">Statistics</a>
                 </li>
             </ul>
         </nav>
@@ -58,9 +58,9 @@
         <h5 class="text-left">Most Popular Ingredients:</h5>
         <br>
         <ol id="popular-ingredients">
-            {{#popular_ingredients}}
+            {{#items}}
                 <li><strong>{{.}}</strong></li>
-            {{/popular_ingredients}}
+            {{/items}}
         </ol>
         <!-- Average Total -->
         <hr>
