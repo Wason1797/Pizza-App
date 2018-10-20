@@ -1,0 +1,22 @@
+{
+  "name": "lultima-cena",
+  "version": "1.0.0",
+  "description": "Templates for Code Challenge",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackbuilders/codtober-fest.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stackbuilders/codtober-fest/issues"
+  },
+  "homepage": "https://github.com/stackbuilders/codtober-fest#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
